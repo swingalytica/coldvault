@@ -108,11 +108,6 @@ coldvault run -p prod
 
 ## Documentation
 
-Documentation is available at:
-
-- coldvault.sh
-- docs.coldvault.sh
-
 ## Philosophy
 
 coldvault is designed around two principles:
