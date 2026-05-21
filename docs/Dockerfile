@@ -1,13 +1,17 @@
 # Build Stage
-FROM node:20-alpine AS build
+FROM node:26-bullseye-slim AS build
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci
+COPY pnpm-lock.yaml* ./
+
+RUN npm install -g pnpm@10.18.3
+
+RUN pnpm i
 
 COPY . .
-RUN npm run build
+RUN pnpm run build
 
 
 # Runtime Stage
